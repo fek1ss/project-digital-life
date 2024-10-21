@@ -1,0 +1,54 @@
+
+.topics {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Поле ввода текста */
+.input-text {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Текстовое поле */
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: vertical; /* Позволяет менять высоту текстового поля */
+}
+
+/* Кнопка отправки */
+.submit-topic {
+  background-color: #3e6ae1;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-topic:hover {
+  background-color: #6083e2;
+}
+

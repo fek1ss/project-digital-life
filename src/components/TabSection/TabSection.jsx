@@ -16,6 +16,12 @@ export default function TabSection({active, onChange}){
       </Button>
 
       <Button 
+      isActive={active === "topics"} 
+      onClick={()=>onChange("topics")}>
+        Темы
+      </Button>
+
+      <Button 
       isActive={active === "settings"} 
       onClick={()=>onChange("settings")}>
         Настройки

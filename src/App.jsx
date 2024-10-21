@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Settings from "./components/Settings";
 import Registration from "./components/Registration";
 import { useState } from "react";
+import Topics from "./components/Topics/Topics";
 
 
 export default function App() {
@@ -22,7 +23,8 @@ export default function App() {
       <main>
         {tab === "about" && <About />}
         {tab === "main" && <InnerMain />}
-        {tab === "settings" && <Settings />}
+        {tab === "topics" && <Topics />}
+        {tab === "settings" && <Settings />} 
         {tab === "registration" && <Registration />}
       </main>
     </>
