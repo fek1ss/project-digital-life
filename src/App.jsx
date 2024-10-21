@@ -7,6 +7,7 @@ import Settings from "./components/Settings";
 import Registration from "./components/Registration";
 import { useState } from "react";
 import Topics from "./components/Topics/Topics";
+import Chats from "./components/Chats/Chats";
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         {tab === "about" && <About />}
         {tab === "main" && <InnerMain />}
         {tab === "topics" && <Topics />}
+        {tab === "chats" && <Chats />}
         {tab === "settings" && <Settings />} 
         {tab === "registration" && <Registration />}
       </main>
