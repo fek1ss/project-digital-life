@@ -33,21 +33,6 @@ textarea {
   resize: vertical; /* Позволяет менять высоту текстового поля */
 }
 
-/* Кнопка отправки */
-.submit-topic {
-  background-color: #3e6ae1;
-  color: #fff;
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-weight: bold;
-  margin-right: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
 .submit-topic:hover {
   background-color: #6083e2;
 }

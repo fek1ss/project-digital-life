@@ -1,0 +1,38 @@
+.chats-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f4f0f0;
+}
+.container{
+
+}
+
+.container-subMessage{
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+
+.inp-message{
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.sub-message{
+  padding: 0.7rem 0.5rem;
+  background-color: #3e6ae1;
+  color: #ffffff;
+}
+

@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import "./TabSection.css";
 
+<<<<<<< HEAD
 export default function TabSection({ active, onChange }) {
     return (
         <section className="tabSection">
@@ -22,3 +23,41 @@ export default function TabSection({ active, onChange }) {
         </section>
     );
 }
+=======
+      <Button 
+      isActive={active === "main"} 
+      onClick={()=>onChange("main")}>
+        Главная
+      </Button>
+
+      <Button 
+      isActive={active === "topics"} 
+      onClick={()=>onChange("topics")}>
+        Темы
+      </Button>
+
+      <Button 
+      isActive={active === "chats"} 
+      onClick={()=>onChange("chats")}>
+        Чаты
+      </Button>
+
+      <Button 
+      isActive={active === "settings"} 
+      onClick={()=>onChange("settings")}>
+        Настройки
+      </Button>
+
+      <Button 
+      isActive={active === "registration"} 
+      onClick={()=> onChange("registration")}>
+        Регистрация
+      </Button>
+
+      
+    </section>
+    
+
+  )
+}
+>>>>>>> f393ca4fddc5d91d56d1a35cfebc2411d2ee4b7b
