@@ -1,10 +1,12 @@
 import React from "react";
 
-
-export default function Main(){
+export default function Main() {
   return React.createElement("section", null, [
-    React.createElement("h1", {className:"centered"}, 
-    "Digital Life"),
-    React.createElement("ul", null, "lorem fasjdklf fnjkadslfh dafbhasdkfjkas fahsjdlf a fdshabjfb; sad fbhasdfl")
+      React.createElement("h1", {className: "centered", key: "title"}, "Digital Life"),
+      React.createElement(
+          "ul",
+          {key:"info"},
+          "lorem afbdals fbaslkdfjasod ansflk ashdof fjkdsal hfsd jkfsanfjsh"
+      )
   ])
 }
