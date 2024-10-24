@@ -4,6 +4,7 @@ import TabSection from "./components/TabSection/TabSection.jsx";
 import headerImg from "../public/header-img.webp";
 import About from "./components/About/About.jsx";
 import InnerMain from "./components/InnerMain.jsx"
+import GetPosts from "./components/GetPosts.jsx";
 import Settings from "./components/Settings.jsx";
 import Registration from "./components/Registration.jsx";
 
@@ -33,6 +34,10 @@ function App() {
                 {tab === "about" && <About/>}
                 {tab === "main" && <InnerMain/>}
                 {tab === "topics" && <CreatePost
+                    onPostCreated={handlePostCreated} // Передаем коллбэк для успешного создания поста
+                    onError={handleError}              // Передаем коллбэк для обработки ошибок
+                />}
+                {tab === "Gets" && <GetPosts
                     onPostCreated={handlePostCreated} // Передаем коллбэк для успешного создания поста
                     onError={handleError}              // Передаем коллбэк для обработки ошибок
                 />}
