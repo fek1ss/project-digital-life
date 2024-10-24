@@ -2,7 +2,7 @@ import { useState } from "react";
 import './Topics.css';
 import '../Button/Button.css';
 
-<<<<<<< HEAD
+
 export default function Topics() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -50,16 +50,16 @@ export default function Topics() {
         </div>
     );
 }
-=======
-export default function Topics(){
-  return (
-    <>
-      <div className="topics">
-          <input className='input-text' type="text" placeholder='Title'/>
-          <textarea name="text-topic" id=""></textarea>
-          <button className='button'>Отправить</button>
-      </div>
-    </>
-  )
-}
->>>>>>> f393ca4fddc5d91d56d1a35cfebc2411d2ee4b7b
+
+// export default function Topics(){
+//   return (
+//     <>
+//       <div className="topics">
+//           <input className='input-text' type="text" placeholder='Title'/>
+//           <textarea name="text-topic" id=""></textarea>
+//           <button className='button'>Отправить</button>
+//       </div>
+//     </>
+//   )
+// }
+
