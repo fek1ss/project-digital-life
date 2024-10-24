@@ -14,6 +14,9 @@ export default function TabSection({ active, onChange }) {
             <Button isActive={active === "topics"} onClick={() => onChange("topics")}>
                 Темы
             </Button>
+            <Button isActive={active === "Сhats"} onClick={() => onChange("Chats")}>
+                Чаты
+            </Button>
             <Button isActive={active === "settings"} onClick={() => onChange("settings")}>
                 Настройки
             </Button>

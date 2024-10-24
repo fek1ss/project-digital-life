@@ -37,7 +37,7 @@ function App() {
                     onPostCreated={handlePostCreated} // Передаем коллбэк для успешного создания поста
                     onError={handleError}              // Передаем коллбэк для обработки ошибок
                 />}
-                {/* {tab === "chats" && купк<Chats/>} */}
+                {tab === "chats" && <Chats/>}
                 {tab === "settings" && <Settings/>}
                 {tab === "registration" && <Registration/>}
             </main>
@@ -46,3 +46,5 @@ function App() {
         </>
     );
   }
+
+export default App; // Ensure this line is present
