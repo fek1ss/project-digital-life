@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import "./TabSection.css";
 
+
 export default function TabSection({ active, onChange }) {
     return (
         <section className="tabSection">

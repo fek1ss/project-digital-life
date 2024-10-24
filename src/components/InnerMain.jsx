@@ -7,6 +7,12 @@ export default function Main() {
           "ul",
           {key:"info"},
           "lorem afbdals fbaslkdfjasod ansflk ashdof fjkdsal hfsd jkfsanfjsh"
-      )
+      ),
+
+    React.createElement("h1", {className:"centered", key: "title"}, "Digital Life"),
+    React.createElement(
+      "ul",
+      { key: "info" }, 
+      "lorem fasjdklf fnjkadslfh dafbhasdkfjkas fahsjdlf a fdshabjfb; sad fbhasdfl")
   ])
 }
