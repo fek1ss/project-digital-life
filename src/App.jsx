@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CreatePost from './components/CreatePost';  // Импортируем компонент создания поста
+import CreatePost from './components/CreatePost/CreatePost.jsx';  // Импортируем компонент создания поста
 import TabSection from "./components/TabSection/TabSection.jsx";
 import headerImg from "../public/header-img.webp";
 import Chats from "./components/Chats/Chats.jsx";
@@ -8,7 +8,7 @@ import InnerMain from "./components/InnerMain.jsx"
 import Settings from "./components/Settings.jsx";
 import Registration from "./components/Registration.jsx";
 
-function App() {
+export default function App() {
     const [message, setMessage] = useState(''); // Состояние для хранения сообщений
     const [error, setError] = useState(''); // Состояние для хранения ошибок
 
@@ -45,6 +45,5 @@ function App() {
             {error && <div style={{color: 'red'}}>{error}</div>} {/* Сообщение об ошибке */}
         </>
     );
-  }
+}
 
-export default App; // Ensure this line is present

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./Topics/Topics.css"
-function CreatePost({ onPostCreated, onError }) {
+import "./CreatePost.css";
+
+export default function CreatePost({ onPostCreated, onError }) {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
@@ -57,7 +58,7 @@ function CreatePost({ onPostCreated, onError }) {
                         onChange={(e) => setContent(e.target.value)}
                         required
                     ></textarea>
-                    <button className="button" type="submit">Create Post</button>
+                    <button className="button submit-topic" type="submit">Create Post</button>
                 </div>
             </>
 
@@ -66,4 +67,4 @@ function CreatePost({ onPostCreated, onError }) {
     );
 }
 
-export default CreatePost;
+
