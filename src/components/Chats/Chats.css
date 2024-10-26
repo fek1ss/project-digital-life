@@ -10,9 +10,41 @@
   border-radius: 10px;
   background-color: #f4f0f0;
 }
-.container{
 
+
+.container {
+  display: flex;
+  justify-content: flex-start; /* Измените на flex-end для выравнивания вправо */
+  padding: 10px; /* Отступы вокруг контейнера */
 }
+
+.message {
+  background-color: #e8ffe8; /* Цвет фона для сообщения */
+  border-radius: 20px; /* Скругленные углы */
+  padding: 10px 15px; /* Отступы внутри сообщения */
+  max-width: 80%; /* Ограничиваем максимальную ширину сообщения */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  position: relative; /* Для псевдоэлементов */
+  height: 50px;
+}
+
+.message p {
+  text-align: center;
+  margin: 0; /* Убираем отступы у параграфа */
+  color: #333; /* Цвет текста */
+  font-size: 16px; /* Размер текста */
+}
+
+/* Псевдоэлемент для создания "хвоста" сообщения */
+.message::after {
+  content: "";
+  position: absolute;
+  bottom: 100%; /* Позиционируем выше сообщения */
+  border-width: 8px; /* Размер "хвоста" */
+  border-style: solid;
+  border-color: transparent transparent #e8ffe8 transparent; /* Цвет "хвоста" */
+}
+
 
 .container-subMessage{
   display: flex;
@@ -20,6 +52,12 @@
   gap: 10px; 
 }
 
+.inp-user{
+  padding: 10px;
+  width: 40%;
+  margin: auto;
+  height: 30px;
+}
 
 .inp-message{
   flex: 1;

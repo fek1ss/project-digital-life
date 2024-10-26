@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Chats.css';
 import '../Button/Button.css';
 
@@ -6,66 +6,73 @@ export default function Chats() {
     const [socket, setSocket] = useState(null);
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
+    const [username, setUsername] = useState('');
 
     useEffect(() => {
-        // Инициализация WebSocket
         const ws = new WebSocket('ws://localhost:8000/ws');
 
-        // Обработчик входящих сообщений
         ws.onmessage = (event) => {
             const message = JSON.parse(event.data);
             setMessages((prevMessages) => [...prevMessages, message]);
         };
 
-        // Обработчик ошибок
         ws.onerror = (error) => {
             console.error('WebSocket error:', error);
         };
 
-        // Закрытие WebSocket при размонтировании компонента
         ws.onclose = () => {
             console.log('WebSocket closed');
         };
 
         setSocket(ws);
 
-        // Закрытие WebSocket при размонтировании компонента
         return () => {
             ws.close();
         };
     }, []);
 
-    // Функция для отправки сообщения
     const sendMessage = () => {
-        if (socket && input) {
-            socket.send(JSON.stringify({ message: input }));
-            setInput(''); // Очистка поля ввода после отправки
+        if (socket && input && username) {
+            socket.send(JSON.stringify({ username, message: input }));
+            setInput('');
         }
     };
 
     return (
-        <div className="chats-container">
-            <div className="container">
-                {messages.map((msg, index) => (
-                    <div key={index}>{msg.message}</div>
-                ))}
-            </div>
-
-            <div className="container-subMessage">
+        <>
+            <div className="chats-container">
+                {/* Поле для ввода имени пользователя */}
                 <input
                     type="text"
-                    className="inp-message"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    placeholder="Введите сообщение"
+                    className="inp-user"
+                    placeholder="Введите имя пользователя"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
-                <button
-                    className="button sub-message"
-                    onClick={sendMessage}
-                >
-                    Отправить
-                </button>
+
+                {/* Контейнер для сообщений */}
+                <div className="container">
+                    {messages.map((msg, index) => (
+                        <div key={index} className="message">
+                            <p><strong>{msg.username}:</strong> {msg.message}</p>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Поле ввода и кнопка отправки */}
+                <div className="container-subMessage">
+                    <input
+                        type="text"
+                        className="inp-message"
+                        placeholder="Введите сообщение"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                    />
+                    <button className="button sub-message" onClick={sendMessage}>
+                        Отправить
+                    </button>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
