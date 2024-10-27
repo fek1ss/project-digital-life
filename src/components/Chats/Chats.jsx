@@ -5,8 +5,8 @@ export default function Chats(){
   return(
     <>
       <div className="chats-container">
-        <input type="text" className="inp-user"/>
-
+        <input type="text" className="inp-user" placeholder=""/>
+        
         <div className="container">
           <div className="message">
             <p>Сообщение</p>

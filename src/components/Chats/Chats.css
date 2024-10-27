@@ -19,9 +19,10 @@
 }
 
 .message {
+  margin-top: 20px;
   background-color: #e8ffe8; /* Цвет фона для сообщения */
   border-radius: 20px; /* Скругленные углы */
-  padding: 10px 15px; /* Отступы внутри сообщения */
+  padding: 0 15px; /* Отступы внутри сообщения */
   max-width: 80%; /* Ограничиваем максимальную ширину сообщения */
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
   position: relative; /* Для псевдоэлементов */
