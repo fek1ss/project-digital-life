@@ -6,7 +6,8 @@ import Chats from "./components/Chats/Chats.jsx";
 import About from "./components/About/About.jsx";
 import InnerMain from "./components/InnerMain.jsx"
 import Settings from "./components/Settings.jsx";
-import Registration from "./components/Registration.jsx";
+import Registration from "./components/Registration/Registration.jsx";
+import SignIn from "./components/SignIn/SignIn.jsx";
 
 export default function App() {
     const [message, setMessage] = useState(''); // Состояние для хранения сообщений
@@ -38,6 +39,7 @@ export default function App() {
                     onError={handleError}              // Передаем коллбэк для обработки ошибок
                 />}
                 {tab === "chats" && <Chats/>}
+                {tab === "sign_in" && <SignIn/>}
                 {tab === "settings" && <Settings/>}
                 {tab === "registration" && <Registration/>}
             </main>
