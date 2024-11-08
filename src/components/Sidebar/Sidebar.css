@@ -1,0 +1,53 @@
+
+.sidebar {
+  width: 100px; /* Увеличьте ширину для лучшей видимости */
+  height: 100vh;
+  background-color: #FDF7FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 10px;
+  transform: translateX(-100%); /* Изначально скрываем за пределами экрана */
+  transition: transform 0.3s ease; /* Плавный переход */
+}
+
+.sidebar.active {
+  transform: translateX(0); /* Выдвигаем при активации */
+}
+
+
+.addTopic{
+  padding: 25px 25px;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 15px;
+  font-size: 32px;
+  cursor: pointer;
+  background-color: #b5b3b1;
+  color: #fff;
+  height: 14px;
+  position: absolute;
+  z-index: 101;
+  top: 80px;
+  left:13px;
+}
+
+.addTopic.background{
+  background-color: #6B2F45;
+}
+
+
+
+.btn-menu{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  top: 5px; /* Позиционируем кнопку на 10px от верхнего края */
+  left:25px;
+  padding: 10px; /* Увеличиваем область нажатия кнопки */
+}
+

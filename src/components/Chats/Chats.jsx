@@ -2,17 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './Chats.css';
 import '../Button/Button.css';
 
-export default function Chats(){
-  return(
-    <>
-      <div className="chats-container">
-        <input type="text" className="inp-user" placeholder=""/>
-        
-        <div className="container">
-          <div className="message">
-            <p>Сообщение</p>
-          </div>
-        </div>
+export default function Chats() {
+    const [socket, setSocket] = useState(null);
+    const [messages, setMessages] = useState([]);
+    const [input, setInput] = useState('');
+    const [username, setUsername] = useState('');
+
+    useEffect(() => {
+        const ws = new WebSocket('ws://localhost:8000/ws');
 
         ws.onmessage = (event) => {
             const message = JSON.parse(event.data);
@@ -40,7 +37,7 @@ export default function Chats(){
             setInput('');
         }
     };
-
+    
     return (
         <>
             <div className="chats-container">

@@ -1,50 +1,23 @@
-import React, { useState } from 'react';
-import CreatePost from './components/CreatePost/CreatePost.jsx';  // Импортируем компонент создания поста
-import TabSection from "./components/TabSection/TabSection.jsx";
-import headerImg from "../public/header-img.webp";
-import Chats from "./components/Chats/Chats.jsx";
-import About from "./components/About/About.jsx";
-import InnerMain from "./components/InnerMain.jsx"
-import Settings from "./components/Settings.jsx";
-import Registration from "./components/Registration/Registration.jsx";
-import SignIn from "./components/SignIn/SignIn.jsx";
+import Home  from './pages/Home/Home.jsx';
+import MyCopy from './pages/MyCopy/MyCopy.jsx';
+import Sidebar  from './components/Sidebar/Sidebar.jsx';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Dialogs from "./pages/Dialogs/Dialogs.jsx";
+
 
 export default function App() {
-    const [message, setMessage] = useState(''); // Состояние для хранения сообщений
-    const [error, setError] = useState(''); // Состояние для хранения ошибок
-
-    const handlePostCreated = (msg) => {
-        setMessage(msg);  // Устанавливаем сообщение об успешном создании поста
-        setError('');     // Сбрасываем ошибки
-    };
-
-    const handleError = (err) => {
-        setError(err);   // Устанавливаем сообщение об ошибке
-        setMessage('');  // Сбрасываем успешные сообщения
-    };
-    const [tab, setTab] = useState("main")
     return (
         <>
-            <div className="header-container">
-                <img className="header-image" src={headerImg} alt="header-cap"/>
+        <div style={{ display: 'flex' }}>
+            <Sidebar />
+            <div style={{ width: '100%'}}>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/dialogs" element={<Dialogs />} />
+                    <Route path="/mycopy" element={<MyCopy />} />
+                </Routes>
             </div>
-            <header>
-                <TabSection active={tab} onChange={(current) => setTab(current)}/>
-            </header>
-            <main>
-                {tab === "about" && <About/>}
-                {tab === "main" && <InnerMain/>}
-                {tab === "topics" && <CreatePost
-                    onPostCreated={handlePostCreated} // Передаем коллбэк для успешного создания поста
-                    onError={handleError}              // Передаем коллбэк для обработки ошибок
-                />}
-                {tab === "chats" && <Chats/>}
-                {tab === "sign_in" && <SignIn/>}
-                {tab === "settings" && <Settings/>}
-                {tab === "registration" && <Registration/>}
-            </main>
-            {message && <div style={{color: 'green'}}>{message}</div>} {/* Сообщение об успехе */}
-            {error && <div style={{color: 'red'}}>{error}</div>} {/* Сообщение об ошибке */}
+        </div>
         </>
     );
 }

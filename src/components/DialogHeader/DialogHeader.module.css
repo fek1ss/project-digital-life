@@ -1,0 +1,24 @@
+.dialogs-header{
+  background-color: #FDF7FF;
+  width: 100%;
+  height: 120px;
+  max-height: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h2{
+  margin:30px;
+}
+
+.container{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,107 @@
+.dialogs{
+  display: block;
+}
+
+
+
+
+.dialogs-main{
+  display: flex;
+}
+
+.dialogs-sidebar{
+  width: 400px; /* Увеличьте ширину для лучшей видимости */
+  height: 100vh;
+  background-color: #FEF7FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  overflow-y: auto;
+}
+
+.dialogs-chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-height: 100vh;
+  width: 100%;
+  background-color: #f0f0f5; /* Светлый фон для чата */
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 500px;
+}
+
+.chat-messages {
+  /* flex-grow: 1; /* Заполняет пространство для сообщений */
+  /* overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column; */
+  /* gap: 8px; Расстояние между сообщениями */ 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc; /* Разделительная линия сверху */
+  background-color: #fff;
+}
+
+.chat-input input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  font-size: 16px;
+  background-color: #007bff; /* Синий цвет для кнопки */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 70%;
+  word-wrap: break-word;
+  background-color: #007bff;
+}
+
+.right {
+  align-self: flex-end;
+  background-color: #d1e7dd;
+  color: #333;
+  border-top-right-radius: 0;
+  border-top-left-radius: 15px;
+}
+
+/* Сообщение от другого человека (лево) */
+.left {
+  align-self: flex-start;
+  background-color: #e9ecef;
+  color: #333;
+  border-top-left-radius: 0;
+  border-top-right-radius: 15px;
+}

@@ -6,20 +6,11 @@
   box-sizing: border-box;
 }
 
-body {
+body{
   font-family: 'Roboto', sans-serif;
 }
 
-header {
-  height: 70px;
-  display: flex;
-  padding: 0 2rem;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
-  background: #fafafa;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
+
 
 
 .header-container {
@@ -76,10 +67,7 @@ section ul li {
   margin-bottom: 1rem;
 }
 
-.content,
-p {
-  padding: 1rem 0;
-}
+
 
 
 .p-description{
