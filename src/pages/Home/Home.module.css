@@ -40,6 +40,12 @@ header {
   gap: 20px;
 }
 
+.link{
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+
 .first-section {
   height: 100%; 
   padding: 20px;

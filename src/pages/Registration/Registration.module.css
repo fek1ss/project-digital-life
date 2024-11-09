@@ -1,0 +1,68 @@
+body {
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center; /* Центрирование по вертикали */
+  height: 100vh; /* Высота вьюпорта */
+  margin: 0; /* Убирает отступы */
+}
+.container{
+  background-color: rgb(238, 235, 233);
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: rgb(124, 123, 123) 1px 3px 4px 4px;
+
+}
+
+.inner_container{
+  margin: 10px;
+  
+}
+
+.input:hover{
+  background-color: #007BFF;
+}
+
+.na{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+h1{
+  text-align: center;
+}
+
+
+.gender_option{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+
+.gender{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container_input{
+  margin: 10px;
+}
+
+.label{
+  text-align: start;
+}
+
+button{
+  width: 100%;
+  padding: 5px;
+  background-color: #007BFF;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10%;
+}

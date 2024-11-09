@@ -5,6 +5,8 @@ import settings from '../../../public/settingsIcon.png';
 import register from '../../../public/online-registration.png';
 import notification from '../../../public/notificationIcon.png';
 import FunTopic from '../../components/FunTopic/FunTopic.jsx';
+import { Link } from 'react-router-dom';
+
 
 export default function Home() {
     return (
@@ -19,8 +21,15 @@ export default function Home() {
                     </div>
         
                     <div className={styles['second-section-header']}>
+                        <Link to="/registration" className={styles['link']}> 
+                            <img className={styles['icon']} src={register} alt="" />
+                            <p>registration</p>
+                        </Link>
+                        <Link to="/registration" className={styles['link']}> 
+                            <img className={styles['icon']} src={register} alt="" />
+                            <p>sign in</p>
+                        </Link>
                         <img className={styles['icon']} src={notification} alt="notification" />
-                        <img className={styles['icon']} src={register} alt="" />
                         <img className={styles['icon']} src={settings} alt="settings" />
                     </div>
 
