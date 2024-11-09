@@ -13,8 +13,8 @@ export default function Dialogs() {
 
   useEffect(() => { // ComponentDidMount()
     connect((msg) => {
-      console.log("New message from user ");
-      setChatHistory((prevHistory) => [...prevHistory, msg]);
+      console.log("NEW MESSAGE FROM USER");
+      setChatHistory((prevHistory) => [...prevHistory, msg.data]);
     });
     console.log()
   }, []);
@@ -23,9 +23,9 @@ export default function Dialogs() {
   const send = (event) => {
     if (event.keyCode === 13) {
       const message = event.target.value;
-      sendMsg(message);
+      sendMsg(message); // Отправляем сообщение на сервер
       event.target.value = '';
-    }
+    } 
   };
 
   return (
@@ -44,7 +44,7 @@ export default function Dialogs() {
 
           <div className={styles['chat-input']}>
             <ChatInput onKeyDown={send} />
-            <button onClick={() => sendMsg("Отправить")}>Отправить</button>
+            <button onClick={() => sendMsg(message)}>Отправить</button>
           </div>
           
         </div>
