@@ -4,6 +4,7 @@ import Sidebar  from './components/Sidebar/Sidebar.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dialogs from "./pages/Dialogs/Dialogs.jsx";
 import Registration from './pages/Registration/Registration.jsx';
+import SignIn from './pages/SignIn/SignIn.jsx';
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
                     <Route path="/dialogs" element={<Dialogs />} />
                     <Route path="/mycopy" element={<MyCopy />} />
                     <Route path="/registration" element={<Registration />} />
+                    <Route path="/signIn" element={<SignIn />} />
                 </Routes>
             </div>
         </div>

@@ -25,7 +25,7 @@ export default function Home() {
                             <img className={styles['icon']} src={register} alt="" />
                             <p>registration</p>
                         </Link>
-                        <Link to="/registration" className={styles['link']}> 
+                        <Link to="/signIn" className={styles['link']}> 
                             <img className={styles['icon']} src={register} alt="" />
                             <p>sign in</p>
                         </Link>
