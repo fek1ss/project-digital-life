@@ -35,6 +35,10 @@ select {
     font-size: 0.875em;
 }
 
+.button:hover {
+    background-color: #218838;
+}
+
 .message {
     margin-top: 15px;
     color: green;

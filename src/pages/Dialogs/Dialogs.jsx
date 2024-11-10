@@ -10,6 +10,7 @@ import ChatHistory from '../../components/ChatHistory/ChatHistory';
 
 export default function Dialogs() {
   const [chatHistory, setChatHistory] = useState([]);
+  const [currentMessage, setCurrentMessage] = useState('');
 
   useEffect(() => { // ComponentDidMount()
     connect((msg) => {
@@ -20,13 +21,18 @@ export default function Dialogs() {
   }, []);
 
 
-  const send = (event) => {
-    if (event.keyCode === 13) {
-      const message = event.target.value;
-      sendMsg(message); // Отправляем сообщение на сервер
-      event.target.value = '';
-    } 
+  const send = () => {
+    if(currentMessage.trim() !== ''){
+      sendMsg(currentMessage)
+      setCurrentMessage('')
+    }
   };
+
+  const handleKeyDown = (event) =>{
+    if (event.key === "Enter"){
+      send();
+    }
+  }
 
   return (
     <div className={styles.dialogs}>
@@ -43,8 +49,11 @@ export default function Dialogs() {
           <ChatHistory chatHistory={chatHistory} />
 
           <div className={styles['chat-input']}>
-            <ChatInput onKeyDown={send} />
-            <button onClick={() => sendMsg(message)}>Отправить</button>
+            <ChatInput 
+            onKeyDown={handleKeyDown}
+            value={currentMessage} 
+            onChange={(e) => setCurrentMessage(e.target.value)} />
+            <button onClick={send}>Отправить</button>
           </div>
           
         </div>
