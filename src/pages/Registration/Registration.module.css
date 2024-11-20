@@ -1,4 +1,4 @@
-.registration-container {
+.registrationContainer {
     max-width: 400px;
     margin: auto;
     padding: 20px;
@@ -6,12 +6,12 @@
     border-radius: 5px;
 }
 
-.registration-form {
+.registrationForm {
     display: flex;
     flex-direction: column;
 }
 
-.form-group {
+.formGroup {
     margin-bottom: 15px;
 }
 
@@ -26,7 +26,7 @@ select {
     border-radius: 5px;
 }
 
-.input-error {
+.inputError {
     border-color: red;
 }
 

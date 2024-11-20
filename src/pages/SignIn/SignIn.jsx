@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SignIn.css';
+import styles from './SignIn.module.css';
 
 const SignIn = () => {
     const [formData, setFormData] = useState({
@@ -26,65 +26,67 @@ const SignIn = () => {
         e.preventDefault();
         setMessage('');
 
-        console.log("Form data before submit:", formData); // Проверка данных
-
         if (validateForm()) {
             try {
                 const response = await fetch('/api/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ user: formData }), // Оборачиваем formData в user
+                    body: JSON.stringify({ user: formData }),
                 });
-                console.log("Response status:", response.status); // Статус ответа
 
                 if (response.ok) {
+                    const data = await response.json();
+                    const { user_id } = data; // Получаем user_id из ответа
+
+                    // Сохраняем user_id в localStorage
+                    localStorage.setItem('user_id', user_id);
+
                     setMessage('Login successful!');
                     setFormData({ username: '', password: '' });
                     setErrors({});
                 } else {
                     const data = await response.json();
-                    setMessage(data.message || 'Login failed');
+                    setMessage(data.message || 'Login failed. Please check your credentials.');
                 }
             } catch (error) {
                 console.error('Login error:', error);
                 setMessage('An error occurred. Please try again.');
             }
-
+        } else {
+            setLoading(false);
         }
-        console.log("Отправляемые данные:", formData);
-
     };
 
 
     return (
-        <div className="signin-container">
+        <div className={styles.signinContainer}>
             <h2>Sign In</h2>
-            <form onSubmit={handleSubmit} className="signin-form">
-                <div className="form-group">
+            <form onSubmit={handleSubmit} className={styles.signinForm}>
+                <div className={styles.formGroup}>
                     <label>Username</label>
                     <input
                         type="text"
                         name="username"
                         value={formData.username}
                         onChange={handleChange}
-                        className={errors.username ? 'input-error' : ''}
+                        className={errors.username ? styles.inputError : ''}
                     />
-                    {errors.username && <small className="error">{errors.username}</small>}
+                    {errors.username && <small className={styles.error}>{errors.username}</small>}
                 </div>
-                <div className="form-group">
+                <div className={styles.formGroup}>
                     <label>Password</label>
                     <input
                         type="password"
                         name="password"
                         value={formData.password}
                         onChange={handleChange}
-                        className={errors.password ? 'input-error' : ''}
+                        className={errors.password ? styles.inputError : ''}
                     />
-                    {errors.password && <small className="error">{errors.password}</small>}
+                    {errors.password && <small className={styles.error}>{errors.password}</small>}
                 </div>
-                <button type="submit">Sign In</button>
+                <button type="submit" className={styles.button}>Sign In</button>
             </form>
-            {message && <p className="message">{message}</p>}
+            {message && <p className={styles.message}>{message}</p>}
         </div>
     );
 };
